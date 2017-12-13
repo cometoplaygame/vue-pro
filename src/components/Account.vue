@@ -1,22 +1,24 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <h1>{{ title }}</h1>
+    <p>账户中心</p>
+    <ul>
       <li>
-        <router-link to="/account/my">账户中心</router-link>
+        <router-link to="/account/3">账户中心</router-link>
       </li>
       <li>
         <router-link to="/">首页</router-link>
       </li>
+      </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'account',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      title: '我的'
     }
   }
 }
