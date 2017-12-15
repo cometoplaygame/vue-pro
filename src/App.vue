@@ -2,7 +2,7 @@
   <div id="app">
     12313123123
     <img src="./assets/logo.png">
-    <router-view/>
+    <router-view></router-view>
   </div>
 </template>
 
