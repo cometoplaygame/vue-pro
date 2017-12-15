@@ -11,6 +11,15 @@ const portfinder = require('portfinder')
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
+/* daiyunzhou 增加express 20171215 */
+const express = require('express')
+const app = express()
+var appData = require('../list.json')//加载本地数据文件
+var goods = appData.goods
+var router = express.Router()
+app.use('/api', router)
+/* 增加express end */
+
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: true })
@@ -35,8 +44,19 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
       poll: config.dev.poll,
-    }
+    },
+    /* datura_lj 增加express 20171126 */
+    before(app) {
+      app.get('/api/goods', (req, res) => {
+        res.json({
+          code: 0,
+          data: goods
+        })
+      })
+    } 
+    /* datura_lj 增加路由规则 end */
   },
+  
   plugins: [
     new webpack.DefinePlugin({
       'process.env': require('../config/dev.env')
