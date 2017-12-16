@@ -16,4 +16,6 @@
 
 ###daiyunzhou branch
 > 安装express ,vue-resource
+> npm install stylus-loader css-loader style-loader --save-dev
++ 编译scss依赖
 
