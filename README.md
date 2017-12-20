@@ -19,3 +19,6 @@
 > npm install stylus-loader css-loader style-loader --save-dev
 + 编译scss依赖
 
+> UI：
+    + vue-slider-component
+
